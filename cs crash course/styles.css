@@ -1,0 +1,193 @@
+h1 {
+    color: red;
+}
+
+/* common properties examples: color, background-color, width, height, border, & font-size-weight-family */
+
+h1 {
+    color: rgba (0,0,0,0.5);
+}
+
+h1 {
+    color: #000;
+}
+
+/* There are 3 ways to set color */
+
+div {
+    width: 100%;
+    max-width: 200px;
+    height: 100vh;
+    border: 1px solid black;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: "roboto", sans-serif;
+}
+
+/* Avoid hard coding the height or it won't be reponsive */
+
+/* specificity is the prioritization of the styling */
+
+p {
+    color: red;
+}
+
+p {
+    color: blue;
+}
+
+/* Blue has priority because it comes after red when element is the same */
+
+/* add a class of red and blue for each paragraph tag then target it with a . */
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+/* Now you have different color text */
+
+/* Specfic classes has a higher weighting */
+
+/* Id has the highest weighting (You only have one in each section) */
+
+#title {
+    font-weight: bold;
+    color: purple;
+}
+
+/* p.blue has more weight then .blue (not recommened) */
+
+/* !important gives it a higher weighting (also not reccommened) */
+
+/* 3 ways to target an element are tag name, class, and id */
+
+
+/* The box model is a container that consists of multiple different properties */
+
+/* box model consist of content, padding, border, & margin (Order is important */
+
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    border: 15px solid red;
+    padding: 15px;
+    margin: 15px;
+}
+
+/* margin to seperate elements & padding to seperate borders */
+
+
+/* 2 complex properties are display & position */
+
+/* 2 css display values are block (takes 100% of the width and starts on a new line) & inline (doesn't allow you to set a width or height for element and start on the same line) */
+
+/* 3 css position values (commom): static (default) follows nomarls flow of the page, relative lets you position, and absolute does not follow the normal flow of the page */
+
+div {
+    height: 200px;
+    border: 3px solid black;
+}
+
+.red {
+    background-color: red;
+    position: relative;
+    bottom: 10px;
+    right: 10px;
+}
+
+body {
+    height: 200vh;
+}
+
+.red {
+    position: absolute;
+    width: 100%
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+}
+
+.child {
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+}
+
+/* position: absolute doesnt take up 100% of the width, need to set the width yourself*/
+
+/* 2 css position values (uncommon): fixed sticks elements to a permanent location on the page & sticky is the same once it hits a threshold */
+
+
+@media (max-width: 992px) {
+    div {
+        font-size: 20px;
+    }
+}
+
+/* 576px for moblie phones, 768px for tablets, 992px for desktops, 1200px + for large desktops */
+
+@media (max-width: 768px) {
+    div {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    div {
+        font-size: 16px;
+    }
+}
+
+/* highest media query at top */
+
+/* pseudo selectors (2): after & before */
+
+div::before {
+    content: "Frontened Simplifed"
+}
+
+/* psuedo class has one colon */
+
+div {
+    transition: background-color 300ms;
+}
+
+div:hover {
+    background-color: rgba (0, 0, 0, 0.5);
+}
+
+button{
+    animation: float 2000ms infinite alternate-reverse;
+    transform: translate(10px,10px);
+    transition: all 300ms;
+}
+button:hover {
+    background-color: black;
+    color: white;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+/* BEM is a naming convention used for css classes to make them easier to read and understand */
+
+/* element is dependent on the block componet and modifier is used to change the style of the block */
+
+.nav__link--active {
+
+}
+
